@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Oběšenec - Multiplayer</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Oběšenec - Multiplayer</h1>
+
+  <div id="role-info"></div>
+
+  <div id="set-word" style="display:none;">
+    <label>Zadej tajné slovo (bez diakritiky):</label><br />
+    <input type="text" id="wordInput" autocomplete="off" />
+    <button id="btnSetWord">Nastavit slovo</button>
+  </div>
+
+  <div id="guess-area" style="display:none;">
+    <p>Slovo: <span id="revealed"></span></p>
+    <label>Hádej písmeno:</label>
+    <input type="text" id="guessInput" maxlength="1" autocomplete="off" />
+    <button id="btnGuess">Hádej</button>
+    <p id="wrongGuesses"></p>
+  </div>
+
+  <div id="result"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
