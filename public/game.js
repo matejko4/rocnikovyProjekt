@@ -34,7 +34,7 @@ socket.on('startGame', (msg) => {
     guessArea.style.display = 'none';
   } else {
     setWordDiv.style.display = 'none';
-    guessArea.style.display = 'none'; // čekáme na slovo
+    guessArea.style.display = 'none'; 
   }
 });
 
@@ -85,16 +85,16 @@ socket.on('updateGame', (data) => {
 socket.on('gameOver', (data) => {
   if (data.won) {
     if(role === 'guesser'){
-        resultDiv.textContent = '🎉 Vyhrál jsi! Slovo bylo: ' + data.word;
+        resultDiv.textContent = ' Vyhrál jsi! Slovo bylo: ' + data.word;
     }else{
-        resultDiv.textContent = '💀 Prohrál jsi! Soupeř uhodl tvoje slovo.';
+        resultDiv.textContent = ' Prohrál jsi! Soupeř uhodl tvoje slovo.';
     }
     
   } else {
     if(role === 'guesser'){
-        resultDiv.textContent = '💀 Prohrál jsi! Slovo bylo: ' + data.word;
+        resultDiv.textContent = ' Prohrál jsi! Slovo bylo: ' + data.word;
     }else
-    resultDiv.textContent = '🎉 Vyhrál jsi! Soupeř neuhodl tvoje slovo';
+    resultDiv.textContent = ' Vyhrál jsi! Soupeř neuhodl tvoje slovo';
   }
   setWordDiv.style.display = 'none';
   guessArea.style.display = 'none';

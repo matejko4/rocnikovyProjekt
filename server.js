@@ -13,7 +13,7 @@ let gameState = {
   word: '',
   revealedLetters: [],
   wrongGuesses: [],
-  maxTries: 5,
+  maxTries: 7,
   gameOver: false
 };
 
@@ -68,6 +68,7 @@ io.on('connection', (socket) => {
     } else {
       if (!gameState.wrongGuesses.includes(letter)) {
         gameState.wrongGuesses.push(letter);
+
       }
     }
 
